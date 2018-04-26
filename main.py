@@ -1,6 +1,6 @@
 #-*-coding:utf8;-*-
-#qpy:3
-#qpy:console
+#utheur:dvidwilly
+""" locliser une ip sur freegeoip"""
 
 from os import *
 from urllib.request import urlopen
@@ -8,7 +8,7 @@ import json
 
 def localiser(ip):
   try:
-    res=json.loads(urlopen("http://freegeoip.net/json/%s" %ip).read().decode()))
+    res=json.loads(urlopen("http://freegeoip.net/json/%s" %ip).read().decode())
     for i in res.items():
       print ("{}:{}".format(i[0],i[1])    	
   except:
