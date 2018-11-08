@@ -1,20 +1,20 @@
 #-*-coding:utf8;-*-
-#utheur:dvidwilly
+#autheur:dvidwilly
 """ locliser une ip sur freegeoip"""
 
-from os import *
-from urllib.request import urlopen
+import os
+from request import get
 import json
+import sys
+             
 
 def localiser(ip):
   try:
-    res=json.loads(urlopen("http://freegeoip.net/json/%s" %ip).read().decode())
-    for i in res.items():
-      print ("{}:{}".format(i[0],i[1])    	
-  except:
-    print("Erreur de localisation")
-      	
+    res = json.load(get('http://freegeoip.net/json/%s', %ip).read.decode())
+    for key, val in res.items():
+      print("{} : {} ".format(key, val))
+      except:
+        print("Erreur dans le chargement de l'api")
+ 
 if __name__ == '__main__':
-  while True:
-    ip=str(input("Entrez l'ip-> "))
-    localiser(ip)
+  localiser(sys.argv[1])
