@@ -10,7 +10,7 @@ import sys
 
 def localiser(ip):
   try:
-    res = json.load(get('http://freegeoip.net/json/%s', %ip).read.decode())
+    res = json.load(get('http://ipstack./json/%s', %ip).read.decode())
     for key, val in res.items():
       print("{} : {} ".format(key, val))
       except:
